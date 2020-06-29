@@ -40,7 +40,7 @@ Things you may want to cover:
 |name|string|null: false, index:true|
 |email|integer|index:true, unique:true|
 |password|integer|null: false|
-|group_id|integer|null: false|
+
 ### Association
 - has_many :groups_users
 - has_many :groups, through: groups_users
@@ -49,8 +49,7 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, index:true|
-|user_id|integer|null: false|
+|name|string|null: false, index:true|
 
 ### Association
 - has_many :groups_users
@@ -62,7 +61,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false|
 |group_id|integer|null: false|
-|body|text|null: false|
+|body|text|
 |image|string|
 
 ### Association
