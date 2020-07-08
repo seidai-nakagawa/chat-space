@@ -1,0 +1,63 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info--left
+      .left-top
+        test
+      .left-bottom
+        Membar : masa
+    .chat-main__group-info--right 
+      .right-box
+        = link_to"#",class: "link-edit" do
+          Edit  
+  .chat-main__message-list
+    .chat-main__message-list--block
+      .block-name
+        .block-name__left
+          masa
+        .block-name__right
+          2020/07/05(Wed) 21:34:01
+      .block-message
+        おはよう！
+    .chat-main__message-list--block
+      .block-name
+        .block-name__left
+          masa
+        .block-name__right
+          2020/07/05(Wed) 21:34:01
+      .block-message
+        おはよう！
+    .chat-main__message-list--block
+      .block-name
+        .block-name__left
+          masa
+        .block-name__right
+          2020/07/05(Wed) 21:34:01
+      .block-message
+        おはよう！
+    .chat-main__message-list--block
+      .block-name
+        .block-name__left
+          masa
+        .block-name__right
+          2020/07/05(Wed) 21:34:01
+      .block-message
+        おはよう！
+    .chat-main__message-list--block
+      .block-name
+        .block-name__left
+          masa
+        .block-name__right
+          2020/07/05(Wed) 21:34:01
+      .block-message
+        おはよう！                        
+  .chat-main__form
+    .chat-main__message-form--block
+      .message-form
+        %input{class:"message-form__left", placeholder: 'type a message'}
+          
+        %label{class:"message-form__right"}
+          = icon("far","image")
+          %input{type: "file",class:"label-file"}
+      .send-botton
+        = link_to"#",class:"link-send" do
+          send
