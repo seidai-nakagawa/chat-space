@@ -5,46 +5,18 @@
         = current_user.name
       .top-items__icons
         .top-items__icons--edit
-          = link_to "#",class: "icon-edit" do
+          = link_to new_group_path,class: "icon-edit" do
             = icon("far","edit")
 
         .top-items__icons--cog
           = link_to edit_user_path(current_user),class: "icon-cog" do
             = icon("fas","cog")
-  .side-bar__group-list
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
-    .side-bar__group-list--block
-      .block-name
-        techchamp
-      .block-message
-        まだメッセージがありません
 
+  .side-bar__group-list
+    - current_user.groups.each do |group|
+      .side-bar__group-list--block
+        =link_to "#" do
+          .block-name
+            =group.name
+      .block-message
+        メッセージはまだありません
