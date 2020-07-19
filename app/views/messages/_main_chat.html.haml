@@ -2,62 +2,41 @@
   .chat-main__group-info
     .chat-main__group-info--left
       .left-top
-        test
-      .left-bottom
-        Membar : masa
+        = @group.name
+      .left-bottom 
+        Member: 
+        - @group.users.each do |user|
+          = user.name
     .chat-main__group-info--right 
       .right-box
-        = link_to"#",class: "link-edit" do
+        = link_to edit_group_path(current_user),class: "link-edit" do
           Edit  
   .chat-main__message-list
-    .chat-main__message-list--block
-      .block-name
-        .block-name__left
-          masa
-        .block-name__right
-          2020/07/05(Wed) 21:34:01
-      .block-message
-        おはよう！
-    .chat-main__message-list--block
-      .block-name
-        .block-name__left
-          masa
-        .block-name__right
-          2020/07/05(Wed) 21:34:01
-      .block-message
-        おはよう！
-    .chat-main__message-list--block
-      .block-name
-        .block-name__left
-          masa
-        .block-name__right
-          2020/07/05(Wed) 21:34:01
-      .block-message
-        おはよう！
-    .chat-main__message-list--block
-      .block-name
-        .block-name__left
-          masa
-        .block-name__right
-          2020/07/05(Wed) 21:34:01
-      .block-message
-        おはよう！
-    .chat-main__message-list--block
-      .block-name
-        .block-name__left
-          masa
-        .block-name__right
-          2020/07/05(Wed) 21:34:01
-      .block-message
-        おはよう！                        
-  .chat-main__form
-    .chat-main__message-form--block
-      .message-form
-        %input{class:"message-form__left", placeholder: 'type a message'}
+    = render @messages
+   
+
+  -# .chat-main__form
+  -#   .chat-main__message-form--block
+  -#     .message-form
+  -#       %input{class:"message-form__left", placeholder: 'type a message'}
           
-        %label{class:"message-form__right"}
-          = icon("far","image")
-          %input{type: "file",class:"label-file"}
-      .send-botton
-        = link_to"#",class:"link-send" do
-          send
+  -#       %label{class:"message-form__right"}
+  -#         = icon("far","image")
+  -#         %input{type: "file",class:"label-file"}
+  -#     .send-botton
+  -#       = link_to"#",class:"link-send" do
+  -#         send
+
+  .chat-main__form
+    = form_with model: [@group, @message], html: {class: "chat-main__message-form--block"}, local: true do |f|
+      .message-form
+        = f.text_field :content, class: 'message-form__left', placeholder: 'type a message'
+        = f.label :image, class: 'message-form__right' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'label-file'
+      = f.submit 'Send', class: 'send-botton'    
+-#    .send-botton
+-#      = f.submit 'Send', class: 'link-send'
+
+
+
