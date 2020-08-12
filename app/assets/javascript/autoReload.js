@@ -41,7 +41,8 @@ $(function(){
   }
 
   let reloadMessages = function() {
-    let last_message_id = $('.chat-main__message-form--block:last').data("message-id") || 0;
+    let last_message_id = $('.chat-main__message-list--block:last').data("message-id") || 0;
+    
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -50,6 +51,7 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages)
       if (messages.length !== 0) {
         let insertHTML = '';
         $.each(messages, function(i, message) {
