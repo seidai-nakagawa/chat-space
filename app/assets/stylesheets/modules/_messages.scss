@@ -106,12 +106,16 @@
           @include flex-align;
           width: 72px;
           height: 40px;
-          padding: 0 20px;
           border: 1px solid #38aef0;
           .link-edit{
             color: #38aef0;
             font-size: 16px;
             text-decoration: none;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            width: 100%;
+            padding: 0 20px;
           }
         }
       }
